@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 30, 2019 at 07:12 PM
--- Server version: 5.7.26-0ubuntu0.18.04.1
--- PHP Version: 7.2.17-0ubuntu0.18.04.1
+-- Host: localhost
+-- Generation Time: Jun 01, 2019 at 10:37 AM
+-- Server version: 5.6.35
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -68,6 +68,7 @@ CREATE TABLE `oauth_access_tokens` (
 --
 
 INSERT INTO `oauth_access_tokens` (`id`, `user_id`, `client_id`, `name`, `scopes`, `revoked`, `created_at`, `updated_at`, `expires_at`) VALUES
+('0a00872babdc4da3a19692d9624b2948c3829517a2c4d857d705af6db486f732be3241fcd0b3d3ba', 19, 1, 'MyApp', '[]', 0, '2019-06-01 01:25:57', '2019-06-01 01:25:57', '2020-06-01 06:55:57'),
 ('0dc3508b22654c991341e95f44fb606a4320b215296c0976fe646edcdbe5f21fa5d27f326930d76a', 13, 1, 'MyApp', '[]', 0, '2019-05-30 07:12:17', '2019-05-30 07:12:17', '2020-05-30 12:42:17'),
 ('12837a22eabf37a0684b70f68f7fbd38103052641f42442ea8167a9d27fc8126a8599c4f52225f26', 9, 1, 'MyApp', '[]', 0, '2019-05-30 07:31:48', '2019-05-30 07:31:48', '2020-05-30 13:01:48'),
 ('1490820cfd315a2519d15e313ebd180b1efa17659854d3bfc74936dc9602ad470631631d46c0e611', 12, 1, 'MyApp', '[]', 0, '2019-05-30 07:08:49', '2019-05-30 07:08:49', '2020-05-30 12:38:49'),
@@ -79,8 +80,11 @@ INSERT INTO `oauth_access_tokens` (`id`, `user_id`, `client_id`, `name`, `scopes
 ('6703b3597f14b7b00a3408d86c1c24d9227ef7bde82f5961b15b356f7dd74be568a17c6f8599c151', 15, 1, 'MyApp', '[]', 0, '2019-05-30 07:14:33', '2019-05-30 07:14:33', '2020-05-30 12:44:33'),
 ('6848ecc0310d5bdab68c7a35d9c8600adb6dac72416f51fc78b27e326d43fcf131ba3925140e8987', 9, 1, 'MyApp', '[]', 0, '2019-05-30 07:32:51', '2019-05-30 07:32:51', '2020-05-30 13:02:51'),
 ('6e6f24810cf35035ed45dd94d4623795978e30b6d527094a568cda2dec8ca6a6434cf6925eb641d4', 14, 1, 'MyApp', '[]', 0, '2019-05-30 07:13:47', '2019-05-30 07:13:47', '2020-05-30 12:43:47'),
+('868c3fa4103960aec55124668c2d814fbb1d6a838b1905db769e3670e9cb61f5cf0f1f441a437615', 20, 1, 'MyApp', '[]', 0, '2019-06-01 02:28:14', '2019-06-01 02:28:14', '2020-06-01 07:58:14'),
 ('901a3c7426913c305dec2c9498187b06e480ca5601509286a16313c1b55c7ec84ba125e1b9250bca', 11, 1, 'MyApp', '[]', 0, '2019-05-30 07:06:45', '2019-05-30 07:06:45', '2020-05-30 12:36:45'),
 ('94aaab259b3d0a1f2390c63da60a4e46ddbb4e14b5085885a336ee5aa0a3784dcd85b46d5aa3a867', 9, 1, 'MyApp', '[]', 0, '2019-05-30 07:32:41', '2019-05-30 07:32:41', '2020-05-30 13:02:41'),
+('b1c3c8342d81f84c661a27eabc226816379930584cb43d8d7c2519e60edab29bf233d0461adf92f2', 18, 1, 'MyApp', '[]', 0, '2019-05-31 07:33:39', '2019-05-31 07:33:39', '2020-05-31 13:03:39'),
+('c3e0e2b0666075a8bd1d532bbd28bd20d8e95a206fd0303dfad534fa9bf1457d1dae2b1c80e169b3', 17, 1, 'MyApp', '[]', 0, '2019-05-31 02:26:33', '2019-05-31 02:26:33', '2020-05-31 07:56:33'),
 ('cf57f1a04773f79acf6cd535a2170767a10922061353cac5fe7f79c70137490d58596e1511f15f68', 9, 1, 'MyApp', '[]', 0, '2019-05-30 07:31:55', '2019-05-30 07:31:55', '2020-05-30 13:01:55'),
 ('e78a7e5eeff07c65e85f82948aaf057ab986194b5ab80217a1a64619c91bd07dab1b0371a9229489', 16, 1, 'MyApp', '[]', 0, '2019-05-30 07:27:38', '2019-05-30 07:27:38', '2020-05-30 12:57:38'),
 ('ec5de82912b80fad101a61a5a434c30b4ae54ab51fbd2601c84003422ed6b833cdd5f4722fcb4888', 9, 1, 'MyApp', '[]', 0, '2019-05-30 07:31:30', '2019-05-30 07:31:30', '2020-05-30 13:01:30'),
@@ -184,7 +188,10 @@ CREATE TABLE `users` (
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `avatar` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `github_username` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -194,14 +201,18 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(9, 'test', 'admin@chetaru.com', NULL, '$2y$10$COFQMVaXAf5EPKN3rMDqv.Bp/iSkiWJRvJaWRMPJy1i02fxyHC1O6', NULL, '2019-05-30 06:05:55', '2019-05-30 06:05:55'),
-(11, 'Business Central', 'info@survey.com', NULL, '$2y$10$rpot8cUpKAsG.38x6JCSKeO/C/mKXUEIE9CsWl09BXAMf7x6rTwVa', NULL, '2019-05-30 07:06:45', '2019-05-30 07:06:45'),
-(12, 'Business Central', 'seo@chetaru.com', NULL, '$2y$10$Vx3Djj7as2itJZ6dRHiMIu0qHbSnAmIQRvRf5VXBcIz5E44r/f0cq', NULL, '2019-05-30 07:08:49', '2019-05-30 07:08:49'),
-(13, 'Business Central', 'helmutbowes1806@gmail.com', NULL, '$2y$10$2L0eo2LNtOxeUj6cAzsA7eACAWgtmsGcPVvtMJd2aZK8FOUz2jlK.', NULL, '2019-05-30 07:12:17', '2019-05-30 07:12:17'),
-(14, 'Business Central', 'sa@sadc.conm', NULL, '$2y$10$nHu8IK6kGbSxfL0iMhioBuM8YffAMDHih7rzryKsxO9x0aRzuDQlm', NULL, '2019-05-30 07:13:47', '2019-05-30 07:13:47'),
-(15, 'Business Central', 'ss@hai.com', NULL, '$2y$10$RduXFaEjaAUuBeE6tW0SjepSBMwjN26GuPbzx9O7z86TQLAA.D8z6', NULL, '2019-05-30 07:14:33', '2019-05-30 07:14:33'),
-(16, 'vxcv', 'vvx@fs.com', NULL, '$2y$10$x0QU9pnFi.K5YPB2.zowqucYU1wrvcSWIwvVl34TPsCXULiVGIqqa', NULL, '2019-05-30 07:27:38', '2019-05-30 07:27:38');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `phone`, `avatar`, `github_username`, `remember_token`, `created_at`, `updated_at`) VALUES
+(9, 'test', 'admin@chetaru.com', NULL, '$2y$10$COFQMVaXAf5EPKN3rMDqv.Bp/iSkiWJRvJaWRMPJy1i02fxyHC1O6', NULL, NULL, NULL, NULL, '2019-05-30 06:05:55', '2019-05-30 06:05:55'),
+(11, 'Business Central', 'info@survey.com', NULL, '$2y$10$rpot8cUpKAsG.38x6JCSKeO/C/mKXUEIE9CsWl09BXAMf7x6rTwVa', NULL, NULL, NULL, NULL, '2019-05-30 07:06:45', '2019-05-30 07:06:45'),
+(12, 'Business Central', 'seo@chetaru.com', NULL, '$2y$10$Vx3Djj7as2itJZ6dRHiMIu0qHbSnAmIQRvRf5VXBcIz5E44r/f0cq', NULL, NULL, NULL, NULL, '2019-05-30 07:08:49', '2019-05-30 07:08:49'),
+(13, 'Business Central', 'helmutbowes1806@gmail.com', NULL, '$2y$10$2L0eo2LNtOxeUj6cAzsA7eACAWgtmsGcPVvtMJd2aZK8FOUz2jlK.', NULL, NULL, NULL, NULL, '2019-05-30 07:12:17', '2019-05-30 07:12:17'),
+(14, 'Business Central', 'sa@sadc.conm', NULL, '$2y$10$nHu8IK6kGbSxfL0iMhioBuM8YffAMDHih7rzryKsxO9x0aRzuDQlm', NULL, NULL, NULL, NULL, '2019-05-30 07:13:47', '2019-05-30 07:13:47'),
+(15, 'Business Central', 'ss@hai.com', NULL, '$2y$10$RduXFaEjaAUuBeE6tW0SjepSBMwjN26GuPbzx9O7z86TQLAA.D8z6', NULL, NULL, NULL, NULL, '2019-05-30 07:14:33', '2019-05-30 07:14:33'),
+(16, 'vxcv', 'vvx@fs.com', NULL, '$2y$10$x0QU9pnFi.K5YPB2.zowqucYU1wrvcSWIwvVl34TPsCXULiVGIqqa', NULL, NULL, NULL, NULL, '2019-05-30 07:27:38', '2019-05-30 07:27:38'),
+(17, 'fsfdf', 'gdg@gmail.com', NULL, '$2y$10$FSrnUG5rmvp0/ZoClwAfEuoyLtvpSdCYY3UTco86SQcpGKCl6Z/Zy', '1234567897', 'avatar1559296664.png', 'octacode', NULL, '2019-05-31 02:26:33', '2019-05-31 08:22:47'),
+(18, 'lsfk', 'lll@gmail.com', NULL, NULL, '1234567890', 'avatar1559307849.png', NULL, NULL, '2019-05-31 07:33:39', '2019-05-31 07:34:09'),
+(19, 'kksl', 'fasd@gmail.com', NULL, NULL, '1234567890', 'avatar1559372218.png', 'iamprateekchouhan', NULL, '2019-06-01 01:25:57', '2019-06-01 01:27:44'),
+(20, 'llgl', 'ldfl@gmail.com', NULL, NULL, '1234567899', 'avatar1559377600.png', 'iamprateekchouhan', NULL, '2019-06-01 02:28:14', '2019-06-01 02:56:40');
 
 --
 -- Indexes for dumped tables
@@ -251,39 +262,23 @@ ALTER TABLE `oauth_refresh_tokens`
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
+  ADD KEY `password_resets_email_index` (`email`(191));
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `oauth_clients`
---
-ALTER TABLE `oauth_clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `oauth_personal_access_clients`
---
-ALTER TABLE `oauth_personal_access_clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
